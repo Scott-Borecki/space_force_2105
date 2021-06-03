@@ -35,8 +35,10 @@ RSpec.describe Flotilla do
       expect(@seventh_flotilla).to be_a(Flotilla)
     end
 
-    xit 'has readable attributes' do
-
+    it 'has readable attributes' do
+      expect(@seventh_flotilla.name).to eq('Seventh Flotilla')
+      expect(@seventh_flotilla.personnel).to eq([])
+      expect(@seventh_flotilla.ships).to eq([])
     end
 
   end
