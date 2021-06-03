@@ -18,4 +18,14 @@ class Flotilla
     @personnel << personnel
   end
 
+  def recommend_personnel(spacecraft)
+    @personnel.find_all do |person|
+      person.specialties.find do |specialty|
+        spacecraft.requirements.find do |requirement|
+          requirement[specialty].is_a?(Integer) && requirement[specialty] <= person.experience
+        end
+      end
+    end
+  end
+
 end
