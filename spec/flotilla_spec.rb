@@ -102,9 +102,11 @@ RSpec.describe Flotilla do
       @seventh_flotilla.add_ship(@daedalus)
 
       prometheus = Spacecraft.new({name: 'Prometheus', fuel: 300})
+      prometheus.add_requirement({operations: 6})
+      prometheus.add_requirement({science: 3})
       @seventh_flotilla.add_ship(prometheus)
 
-      expect(@seventh_flotilla.ready_ships(100)).to eq([prometheus])
+      expect(@seventh_flotilla.ready_ships(100)).to eq([@daedalus])
     end
 
   end
