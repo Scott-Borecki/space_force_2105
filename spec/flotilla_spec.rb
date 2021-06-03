@@ -7,9 +7,10 @@ RSpec.describe Flotilla do
   before :each do
 
     @daedalus = Spacecraft.new({name: 'Daedalus', fuel: 400})
-    @seventh_flotilla =
+    @daedalus.add_requirement({astrophysics: 6})
+    @daedalus.add_requirement({quantum_mechanics: 3})
 
-    Flotilla.new({designation: 'Seventh Flotilla'})
+    @seventh_flotilla = Flotilla.new({designation: 'Seventh Flotilla'})
 
     @kathy = Person.new('Kathy Chan', 10)
     @kathy.add_specialty(:astrophysics)
@@ -60,6 +61,7 @@ RSpec.describe Flotilla do
     end
 
     it 'can recommend personnel' do
+      @seventh_flotilla.add_ship(@daedalus)
       expect = @seventh_flotilla.recommend_personnel(@daedalus)
       expected = [@kathy, @sampson]
       expect(expect).to eq(expected)
