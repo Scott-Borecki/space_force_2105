@@ -94,6 +94,19 @@ RSpec.describe Flotilla do
       expect(@seventh_flotilla.personnel_by_ship).to eq(expected)
     end
 
+    it 'can return ready ships' do
+      @seventh_flotilla.add_personnel(@kathy)
+      @seventh_flotilla.add_personnel(@polly)
+      @seventh_flotilla.add_personnel(@rover)
+      @seventh_flotilla.add_personnel(@sampson)
+      @seventh_flotilla.add_ship(@daedalus)
+
+      prometheus = Spacecraft.new({name: 'Prometheus', fuel: 300})
+      @seventh_flotilla.add_ship(prometheus)
+
+      expect(@seventh_flotilla.ready_ships(100)).to eq([prometheus])
+    end
+
   end
 
 end
