@@ -50,6 +50,15 @@ RSpec.describe Flotilla do
       expect(@seventh_flotilla.ships).to eq([@daedalus])
     end
 
+    it 'can add personnel' do
+      @seventh_flotilla.add_personnel(@kathy)
+      @seventh_flotilla.add_personnel(@polly)
+      @seventh_flotilla.add_personnel(@rover)
+      @seventh_flotilla.add_personnel(@sampson)
+      expected = [@kathy, @polly, @rover, @sampson]
+      expect(@seventh_flotilla.personnel).to eq(expected)
+    end
+
   end
 
 end
