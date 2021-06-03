@@ -14,7 +14,9 @@ RSpec.describe Person do
     end
 
     it 'has readable attributes' do
-
+      expect(@kathy.name).to eq('Kathy Chan')
+      expect(@kathy.experience).to eq(10)
+      expect(@kathy.specialties).to eq([])
     end
 
   end
