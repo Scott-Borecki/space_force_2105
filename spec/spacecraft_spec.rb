@@ -16,7 +16,7 @@ RSpec.describe Spacecraft do
     it 'has readable attributes' do
       expect(@daedalus.name).to eq('Daedalus')
       expect(@daedalus.fuel).to eq(400)
-      expecT(@daedalus.requirements).to eq([])
+      expect(@daedalus.requirements).to eq([])
     end
 
   end
