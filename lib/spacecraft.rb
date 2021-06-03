@@ -1,11 +1,13 @@
 class Spacecraft
 
   attr_reader :name,
-              :fuel
+              :fuel,
+              :requirements
 
   def initialize(data)
-    @name = data[:name]
-    @fuel = data[:fuel]
+    @name         = data[:name]
+    @fuel         = data[:fuel]
+    @requirements = []
   end
 
 end
