@@ -10,4 +10,8 @@ class Spacecraft
     @requirements = []
   end
 
+  def add_requirement(requirement)
+    @requirements << requirement
+  end
+
 end
