@@ -40,7 +40,8 @@ class Flotilla
   def requirements_staffed?(ship)
     ship.requirements.all? do |requirement|
       recommend_personnel(ship).any? do |person|
-        person.specialties.include?(requirement.keys[0]) && person.experience >= requirement.values[0]
+        person.specialties.include?(requirement.keys[0]) &&
+          person.experience >= requirement.values[0]
       end
     end
   end
