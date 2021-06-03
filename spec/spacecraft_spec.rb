@@ -30,6 +30,13 @@ RSpec.describe Spacecraft do
       expect(@daedalus.requirements).to eq(expected)
     end
 
+    it 'can create array requirement types' do
+      @daedalus.add_requirement({astrophysics: 6})
+      @daedalus.add_requirement({quantum_mechanics: 3})
+      expected = [:astrophysics, :quantum_mechanics]
+      expect(@daedalus.requirement_types).to eq(expected)
+    end
+
   end
 
 end
