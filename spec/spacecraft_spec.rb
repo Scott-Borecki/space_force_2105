@@ -23,6 +23,13 @@ RSpec.describe Spacecraft do
 
   describe 'Object Methods' do
 
+    it 'can add requirements' do
+      @daedalus.add_requirement({astrophysics: 6})
+      @daedalus.add_requirement({quantum_mechanics: 3})
+      expected = [{astrophysics: 6}, {quantum_mechanics: 3}]
+      expect(@daedalus.requirements).to eq(expected)
+    end
+
   end
 
 end
