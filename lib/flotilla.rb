@@ -28,4 +28,12 @@ class Flotilla
     end
   end
 
+  def personnel_by_ship
+    hash = Hash.new
+    @ships.map do |ship|
+      hash[ship] = recommend_personnel(ship)
+    end
+    hash
+  end
+
 end
