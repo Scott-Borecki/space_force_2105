@@ -14,4 +14,10 @@ class Spacecraft
     @requirements << requirement
   end
 
+  def requirement_types
+    @requirements.flat_map do |requirement|
+      requirement.keys
+    end
+  end
+
 end
