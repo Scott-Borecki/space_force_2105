@@ -45,6 +45,11 @@ RSpec.describe Flotilla do
 
   describe 'Object Methods' do
 
+    it 'can add a ship' do
+      @seventh_flotilla.add_ship(@daedalus)
+      expect(@seventh_flotilla.ships).to eq([@daedalus])
+    end
+
   end
 
 end
