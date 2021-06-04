@@ -23,7 +23,7 @@ class Flotilla
       person.specialties.find do |specialty|
         spacecraft.requirements.find do |requirement|
           requirement[specialty].is_a?(Integer) &&
-          requirement[specialty] <= person.experience
+          person.experience >= requirement[specialty]
         end
       end
     end
