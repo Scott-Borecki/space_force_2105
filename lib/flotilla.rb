@@ -35,6 +35,10 @@ class Flotilla
       hash[ship] = recommend_personnel(ship)
     end
     hash
+    # @ships.reduce({}) do |hash, ship|
+    #   hash[ship]  = recommend_personnel(ship)
+    # end
+
   end
 
   def requirements_staffed?(ship)
