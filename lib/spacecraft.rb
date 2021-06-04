@@ -1,5 +1,4 @@
 class Spacecraft
-
   attr_reader :name,
               :fuel,
               :requirements
@@ -19,5 +18,4 @@ class Spacecraft
       requirement.keys
     end
   end
-
 end

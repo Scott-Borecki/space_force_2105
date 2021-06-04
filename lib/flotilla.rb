@@ -1,5 +1,4 @@
 class Flotilla
-
   attr_reader :name,
               :personnel,
               :ships
@@ -27,18 +26,22 @@ class Flotilla
         end
       end
     end
+
+    # @personnel.each do |person|
+    #   spacecraft.requirements.each do |req|
+    #     person.specialties.any? do |spec|
+    #       people << person if req.key?(spec) &&
+    #       person.experience >= req[spec]
+    #     end
+    #   end
+    # end
+
   end
 
   def personnel_by_ship
-    hash = Hash.new
-    @ships.map do |ship|
+    @ships.each_with_object({}) do |ship, hash|
       hash[ship] = recommend_personnel(ship)
     end
-    hash
-    # @ships.reduce({}) do |hash, ship|
-    #   hash[ship]  = recommend_personnel(ship)
-    # end
-
   end
 
   def requirements_staffed?(ship)
@@ -52,8 +55,8 @@ class Flotilla
 
   def ready_ships(fuel)
     @ships.find_all do |ship|
-      requirements_staffed?(ship) && ship.fuel >= fuel
+      requirements_staffed?(ship) &&
+      ship.fuel >= fuel
     end
   end
-
 end

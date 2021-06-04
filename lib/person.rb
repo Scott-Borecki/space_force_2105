@@ -1,5 +1,4 @@
 class Person
-
   attr_reader :name,
               :experience,
               :specialties
@@ -13,5 +12,4 @@ class Person
   def add_specialty(specialty)
     @specialties << specialty
   end
-
 end
